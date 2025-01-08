@@ -25,16 +25,27 @@ export default function Home() {
 
     const $picture = document.querySelector('.picture');
 
-    function handleMoveEvent(ev) {
+    function handleMoveEvent(clientY) {
       const rect = $picture.getBoundingClientRect();
-      const relPos = (ev.clientY - rect.top) / (rect.bottom - rect.top);
+      const relPos = (clientY - rect.top) / (rect.bottom - rect.top);
       tl.progress(relPos);
     }
+  
+    function handleMouseMove(ev) {
+      handleMoveEvent(ev.clientY);
+    }
+  
+    function handleTouchMove(ev) {
+      const touch = ev.touches[0];
+      handleMoveEvent(touch.clientY);
+    }
 
-    $picture.addEventListener('mousemove', throttle(handleMoveEvent, 60));
+    $picture.addEventListener('mousemove', throttle(handleMouseMove, 60));
+    $picture.addEventListener('touchmove', throttle(handleTouchMove, 60));
 
     return () => {
       $picture.removeEventListener('mousemove', throttle(handleMoveEvent, 60));
+      $picture.removeEventListener('touchmove', throttle(handleTouchMove, 60));
     };
   }, []);
 
