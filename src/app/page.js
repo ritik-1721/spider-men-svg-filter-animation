@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { throttle } from "lodash";
 
 export default function Home() {
+  const currentYear = new Date().getFullYear();
   useEffect(() => {
     const tl = gsap.timeline({
       paused: true,
@@ -60,6 +61,7 @@ export default function Home() {
       }}
       className="h-screen bg-gradient-to-t from-[#5e4082] to-[#3a124d] flex items-center justify-center"
     >
+
       <div className="absolute top-0 left-0 right-0 p-8 text-white">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <h1 className="font-might-makes-right text-2xl md:text-4xl font-light leading-tight">
@@ -107,7 +109,7 @@ export default function Home() {
           </nav>
         </div>
       </div>
-
+      <div>
       <svg
         className="picture max-w-full h-[60vh] sm:h-[80vh]  mx-auto filter drop-shadow-2xl"
         viewBox="0 0 196 296"
@@ -191,6 +193,20 @@ export default function Home() {
           xlinkHref="images/frame.svg"
         />
       </svg>
+    </div>
+    <div className="absolute bottom-0 right-0 p-8 text-white">
+      <div className="text-center py-4 mt-8">
+        <a 
+          href="https://www.linkedin.com/in/ritik-pawar" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-sm underline">
+          <p className="text-sm">
+            By Ritik Pawar © {currentYear}
+          </p> 
+        </a>
+      </div>
+    </div>
     </main>
   );
 }
