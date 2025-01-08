@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'might-makes-right': ['"might-makes-right-bb"', 'sans-serif'],  
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
