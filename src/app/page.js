@@ -197,7 +197,7 @@ export default function Home() {
     <div className="absolute bottom-0 right-0 p-8 text-white">
       <div className="text-center py-4 mt-8">
         <a 
-          href="https://www.linkedin.com/in/ritik-pawar" 
+          href="https://www.linkedin.com/in/pawar-ritik/" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="text-sm underline">
